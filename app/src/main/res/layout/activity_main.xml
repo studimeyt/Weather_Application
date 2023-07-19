@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/main_bg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/location_layout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="25sp"
+            android:src="@drawable/location_icon">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="location"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:gravity=""
+            android:id="@+id/location_tv"
+            android:fontFamily="sans-serif-condensed-light">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/day_time_layout"
+        android:layout_below="@+id/location_layout"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day "
+            android:id="@+id/day_tv"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="true">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif"
+            android:text=", HH:MM"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/day_time_layout"
+        android:id="@+id/temp_layout"
+        android:layout_marginTop="25dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5°"
+            android:textSize="100sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:id="@+id/temperature_tv">
+
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temp_layout"
+        android:layout_marginTop="20dp"
+        android:id="@+id/weather_layout">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/weather_tv"
+            android:text="Weather"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:gravity="center">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weather_layout"
+        android:layout_marginTop="5dp"
+        android:id="@+id/precipitation_layout">
+        <!--        <ImageView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content">-->
+        <!--            -->
+        <!--        </ImageView>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:text="20%"
+            android:id="@+id/precipitation_tv"
+            android:gravity="center">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coord_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/weather_layout"
+        android:layout_marginTop="2dp">
+
+
+        <FrameLayout
+            android:id="@+id/bottom_sheet_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sheet_color"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_launcher_round" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="3"
+                        android:fontFamily="sans-serif"
+                        android:text="Monday"
+                        android:textColor="@color/black"
+                        android:id="@+id/day_1"
+                        android:textSize="23sp" />
+
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="14"
+                        android:id="@+id/min_day_1"
+                        android:textColor="@color/sky_blue"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.1"
+                        android:fontFamily="sans-serif"
+                        android:text="/"
+                        android:textColor="@color/light_gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="22"
+                        android:textColor="@color/red"
+                        android:id="@+id/max_day_1"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_launcher_round" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="3"
+                        android:fontFamily="sans-serif"
+                        android:text="Monday"
+                        android:textColor="@color/black"
+                        android:id="@+id/day_2"
+                        android:textSize="23sp" />
+
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="14"
+                        android:textColor="@color/sky_blue"
+                        android:id="@+id/min_day_2"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.1"
+                        android:fontFamily="sans-serif"
+                        android:text="/"
+                        android:textColor="@color/light_gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="22"
+                        android:textColor="@color/red"
+                        android:id="@+id/max_day_2"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_launcher_round" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="3"
+                        android:fontFamily="sans-serif"
+                        android:text="Monday"
+                        android:textColor="@color/black"
+                        android:id="@+id/day_3"
+                        android:textSize="23sp" />
+
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="14"
+                        android:textColor="@color/sky_blue"
+                        android:id="@+id/min_day_3"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.1"
+                        android:fontFamily="sans-serif"
+                        android:text="/"
+                        android:textColor="@color/light_gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="22"
+                        android:textColor="@color/red"
+                        android:id="@+id/max_day_3"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp">
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_launcher_round" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="3"
+                        android:fontFamily="sans-serif"
+                        android:text="Monday"
+                        android:textColor="@color/black"
+                        android:id="@+id/day_4"
+                        android:textSize="23sp" />
+
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="14"
+                        android:textColor="@color/sky_blue"
+                        android:id="@+id/min_day_4"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.1"
+                        android:fontFamily="sans-serif"
+                        android:text="/"
+                        android:textColor="@color/light_gray"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="10sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="0.45"
+                        android:fontFamily="sans-serif"
+                        android:text="22"
+                        android:id="@+id/max_day_4"
+                        android:textColor="@color/red"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

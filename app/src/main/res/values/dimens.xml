@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_sheet_expanded_height">400dp</dimen> <!-- Adjust the height as per your requirement -->
+</resources>
