@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -48,5 +51,6 @@ dependencies {
 
 //  json to readable and helps to set text-views etc
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
 }

@@ -137,14 +137,14 @@
         android:id="@+id/coord_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/weather_layout"
+        android:layout_below="@+id/temperatureChart"
         android:layout_marginTop="2dp">
 
 
         <FrameLayout
             android:id="@+id/bottom_sheet_fl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:background="@drawable/sheet_color"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
             <LinearLayout
@@ -400,6 +400,14 @@
 
             </LinearLayout>
         </FrameLayout>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- activity_main.xml -->
+    <!-- Add a LineChart for displaying temperature graph -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_below="@id/weather_layout"
+        android:id="@+id/temperatureChart"
+        android:layout_width="match_parent"
+        android:layout_height="300sp" />
 
 </RelativeLayout>
